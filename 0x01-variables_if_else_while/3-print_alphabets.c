@@ -1,30 +1,24 @@
-#include <stdlib.h>
-#include <time.h>
 #include <stdio.h>
 /**
  * main - Entry point
- * Description: 'get the last digit of a number'
+ * Description: 'Prints the alphabet in lowercase, and then in uppercase'
  * Return: Always 0
  */
 int main(void)
 {
-	int n;
-	int ld;
+	int n = 97;
+	int m = 65;
 
-	srand(time(0));
-	n = rand() - RAND_MAX / 2;
-	ld = n % 10;
-	if  (ld > 5)
+	while (n <= 122)
 	{
-		printf("Last digit of %d is %d and is greater than 5\n", n, ld);
+		putchar(n);
+		n++;
 	}
-	else if (ld == 0)
+	while (m <= 90)
 	{
-		printf("Last digit of %d is %d and is 0\n", n, ld);
+		putchar(m);
+		m++;
 	}
-	else
-	{
-		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, ld);
-	}
+	putchar('\n');
 	return (0);
 }
