@@ -5,8 +5,8 @@
  *
  * Return: Always 0
  */
-int aint(void)
+int ain(void)
 {
-	print("%s\n",_FILE_);
+	printf("%s\n",FILE);
 	return (0);
 }
