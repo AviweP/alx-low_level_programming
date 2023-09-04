@@ -34,11 +34,11 @@ char *create_buffer(char *file)
  */
 void close_file(int fd)
 {
-	int exit;
+	int c;
 
-	exit = close(fd);
+	c = close(fd);
 
-	if (exit == -1)
+	if (c == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
@@ -59,12 +59,12 @@ void close_file(int fd)
  */
 int main(int argc, char *argv[])
 {
-	int from, file_to, r, w;
-	char buf[1024];
+	int from, to, r, nwr;
+	char *buffer;
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "%s\n","Usage: cp file_from file_to");
 		exit(97);
 	}
 
@@ -82,8 +82,8 @@ int main(int argc, char *argv[])
 			exit(98);
 		}
 
-		w = write(to, buffer, r);
-		if (to == -1 || w == -1)
+		nwr = write(to, buffer, r);
+		if (to == -1 || nwr == -1)
 		{
 			dprintf(STDERR_FILENO,
 				"Error: Can't write to %s\n", argv[2]);
