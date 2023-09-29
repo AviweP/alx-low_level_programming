@@ -15,7 +15,7 @@ void print_binary(unsigned long int n)
 		_putchar('0');
 }
 /**
- * print_bin - print binary
+ * print_binary - print binary
  * @n: The decimal to convert
  */
 void print_bin(unsigned long int n)
