@@ -1,4 +1,5 @@
-#include <main.h>
+#include "main.h"
+#include <stddef>
 /**
  * binary_to_uint - sighn binary intigers
  *
@@ -6,7 +7,7 @@
  * Return: (output)
  */
 
-unsigned int binary_to_uint(const char *b);
+unsigned int binary_to_uint(const char *b)
 {
 	int i;
 	unsigned int dec_val = 0;
